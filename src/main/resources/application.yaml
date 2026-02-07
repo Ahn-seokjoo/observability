@@ -1,3 +1,17 @@
 spring:
   application:
     name: observability
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/traces
+  tracing:
+    sampling:
+      probability: 1.0
