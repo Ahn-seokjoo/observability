@@ -3,6 +3,10 @@ spring:
     name: observability
 
 management:
+  metrics:
+    enable:
+      process: true
+      jvm: true
   endpoints:
     web:
       exposure:
